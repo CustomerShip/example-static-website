@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About &middot; Example Static Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">Static<span>Demo</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="counter.html">Counter</a>
+          <a href="colors.html">Color Mixer</a>
+          <a href="todo.html">To-Do</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container stack">
+      <h1>About this site</h1>
+      <p class="lead">
+        This is a small demonstration of a static website built with nothing
+        but HTML, CSS, and vanilla JavaScript — no frameworks and no build step.
+      </p>
+
+      <div class="card stack">
+        <h3>How it is structured</h3>
+        <p class="muted">
+          Each page is a standalone HTML file sharing one stylesheet
+          (<code>css/style.css</code>) and a small script
+          (<code>js/shared.js</code>) that highlights the active nav link.
+          Interactive pages load their own script plus a shared storage helper.
+        </p>
+      </div>
+
+      <div class="card stack">
+        <h3>Where the data lives</h3>
+        <p class="muted">
+          State is stored client-side through <code>js/db.js</code>, a tiny
+          Promise-based wrapper around <strong>IndexedDB</strong> using a single
+          key/value object store. If IndexedDB is unavailable, it transparently
+          falls back to <strong>localStorage</strong>. Nothing is sent to a
+          server — everything stays in your browser.
+        </p>
+        <ul class="muted">
+          <li><code>counter.total</code> / <code>counter.firstClickTs</code> — all-time click stats</li>
+          <li><code>colors.last</code> — your last mixed RGB color</li>
+          <li><code>todo.items</code> — your saved to-do list</li>
+        </ul>
+      </div>
+
+      <div class="card stack">
+        <h3>The counter stats explained</h3>
+        <p class="muted">
+          <strong>Session</strong> figures live in memory and reset on reload.
+          <strong>All-time</strong> figures persist in the browser. Clicks per
+          second are computed by dividing the click count by the seconds elapsed
+          since the first click (session start or the first click ever recorded),
+          and they update live once per second.
+        </p>
+      </div>
+
+      <p>
+        <a class="btn" href="counter.html">Try the counter &rarr;</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">Pure HTML, CSS &amp; JS &middot; no dependencies.</footer>
+
+    <script src="js/shared.js"></script>
+  </body>
+</html>

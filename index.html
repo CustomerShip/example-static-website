@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home &middot; Example Static Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">Static<span>Demo</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="counter.html">Counter</a>
+          <a href="colors.html">Color Mixer</a>
+          <a href="todo.html">To-Do</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <span class="badge">Pure HTML &middot; CSS &middot; JS</span>
+        <h1>A tiny interactive static website</h1>
+        <p class="lead">
+          No frameworks, no build step. Just a few pages that show off
+          interactive elements and browser-side state persistence using
+          IndexedDB (with a localStorage fallback).
+        </p>
+      </section>
+
+      <section class="grid">
+        <a class="card" href="counter.html">
+          <h3>Click Counter</h3>
+          <p class="muted">
+            Click a button and watch session and all-time stats update live,
+            including clicks-per-second. Stats survive reloads.
+          </p>
+        </a>
+        <a class="card" href="colors.html">
+          <h3>Color Mixer</h3>
+          <p class="muted">
+            Drag RGB sliders to mix a color in real time and copy the hex code.
+          </p>
+        </a>
+        <a class="card" href="todo.html">
+          <h3>To-Do List</h3>
+          <p class="muted">
+            Add, complete, and delete tasks. Your list is saved in the browser.
+          </p>
+        </a>
+        <a class="card" href="about.html">
+          <h3>About</h3>
+          <p class="muted">
+            How the site is built and where the data lives.
+          </p>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      Built as a plain static site &middot; open the pages directly or serve locally.
+    </footer>
+
+    <script src="js/shared.js"></script>
+  </body>
+</html>

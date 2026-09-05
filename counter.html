@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter &middot; Example Static Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">Static<span>Demo</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="counter.html">Counter</a>
+          <a href="colors.html">Color Mixer</a>
+          <a href="todo.html">To-Do</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>Click Counter</h1>
+      <p class="lead">
+        Every click bumps the counter. Session stats reset when you reload;
+        all-time stats are stored in this browser and persist.
+      </p>
+
+      <div class="card counter-wrap">
+        <div class="count-value" id="count">0</div>
+        <button class="btn big" id="clickBtn" type="button">Click me</button>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="label">Clicks this session</div>
+            <div class="value" id="sessionClicks">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Total clicks (this browser)</div>
+            <div class="value" id="totalClicks">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Clicks/s this session</div>
+            <div class="value" id="sessionCps">0.00</div>
+          </div>
+          <div class="stat">
+            <div class="label">Clicks/s (this browser)</div>
+            <div class="value" id="totalCps">0.00</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="btn secondary" id="resetSessionBtn" type="button">
+            Reset session
+          </button>
+          <button class="btn danger" id="resetAllBtn" type="button">
+            Reset all-time data
+          </button>
+        </div>
+        <p class="muted" id="storageNote" style="margin-top: 1.25rem"></p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      All-time stats are stored via IndexedDB (localStorage fallback).
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/counter.js"></script>
+  </body>
+</html>

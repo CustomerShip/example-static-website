@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Mixer &middot; Example Static Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">Static<span>Demo</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="counter.html">Counter</a>
+          <a href="colors.html">Color Mixer</a>
+          <a href="todo.html">To-Do</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>Color Mixer</h1>
+      <p class="lead">
+        Drag the sliders to mix an RGB color. The last color you mixed is
+        remembered in this browser.
+      </p>
+
+      <div class="card mixer">
+        <div class="swatch" id="swatch">#000000</div>
+        <div class="sliders">
+          <div class="slider-row">
+            <label for="r">R</label>
+            <input type="range" id="r" min="0" max="255" value="0" />
+            <output id="rOut">0</output>
+          </div>
+          <div class="slider-row">
+            <label for="g">G</label>
+            <input type="range" id="g" min="0" max="255" value="0" />
+            <output id="gOut">0</output>
+          </div>
+          <div class="slider-row">
+            <label for="b">B</label>
+            <input type="range" id="b" min="0" max="255" value="0" />
+            <output id="bOut">0</output>
+          </div>
+          <div class="controls" style="justify-content: flex-start">
+            <button class="btn secondary" id="copyBtn" type="button">
+              Copy hex
+            </button>
+            <button class="btn secondary" id="randomBtn" type="button">
+              Random
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">Your last mixed color persists across reloads.</footer>
+
+    <script src="js/shared.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/colors.js"></script>
+  </body>
+</html>

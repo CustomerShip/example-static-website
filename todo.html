@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do &middot; Example Static Site</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">Static<span>Demo</span></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="counter.html">Counter</a>
+          <a href="colors.html">Color Mixer</a>
+          <a href="todo.html">To-Do</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>To-Do List</h1>
+      <p class="lead">
+        Add tasks, tick them off, and delete them. The list is saved in this
+        browser and restored on reload.
+      </p>
+
+      <div class="card">
+        <form class="todo-input-row" id="todoForm">
+          <input
+            type="text"
+            id="todoInput"
+            placeholder="What needs doing?"
+            autocomplete="off"
+            aria-label="New task"
+          />
+          <button class="btn" type="submit">Add</button>
+        </form>
+
+        <ul class="todo-list" id="todoList"></ul>
+        <p class="muted" id="emptyNote">No tasks yet — add one above.</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">Tasks persist via browser storage.</footer>
+
+    <script src="js/shared.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>
