@@ -1,2 +1,2 @@
-# example-static-website
+# Hello from CustomerShip
 Example static webstie
