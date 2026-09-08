@@ -151,6 +151,9 @@ h3 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: block; /* Ensure it behaves as a block element */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
 }
 
 .card:hover {
