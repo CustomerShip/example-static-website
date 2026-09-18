@@ -37,6 +37,9 @@
       var text = document.createElement("span");
       text.className = "todo-text";
       text.textContent = item.text;
+      text.addEventListener("dblclick", function () {
+        editItem(item, text);
+      });
 
       var del = document.createElement("button");
       del.type = "button";
@@ -54,6 +57,39 @@
       li.appendChild(text);
       li.appendChild(del);
       list.appendChild(li);
+    });
+  }
+
+  function editItem(item, element) {
+    var originalText = item.text;
+    var input = document.createElement("input");
+    input.type = "text";
+    input.value = originalText;
+    input.className = "todo-edit-input";
+    
+    element.replaceWith(input);
+    input.focus();
+    
+    function saveEdit() {
+      var newText = input.value.trim();
+      if (newText) {
+        item.text = newText;
+        save();
+      } else {
+        // If empty, revert to original text
+        item.text = originalText;
+      }
+      render();
+    }
+    
+    input.addEventListener("blur", saveEdit);
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        saveEdit();
+      } else if (e.key === "Escape") {
+        item.text = originalText;
+        render();
+      }
     });
   }
 
