@@ -26,7 +26,7 @@
   // DOM references.
   var el = {};
   ["count", "clickBtn", "sessionClicks", "totalClicks", "sessionCps",
-   "totalCps", "resetSessionBtn", "resetAllBtn", "storageNote"]
+   "totalCps", "resetSessionBtn", "resetAllBtn", "resetBtn", "storageNote"]
     .forEach(function (id) {
       el[id] = document.getElementById(id);
     });
@@ -85,10 +85,17 @@
       .then(render);
   }
 
+  function reset() {
+    sessionClicks = 0;
+    sessionFirstClickTs = null;
+    render();
+  }
+
   function init() {
     el.clickBtn.addEventListener("click", handleClick);
     el.resetSessionBtn.addEventListener("click", resetSession);
     el.resetAllBtn.addEventListener("click", resetAll);
+    el.resetBtn.addEventListener("click", reset);
 
     // Load persisted state.
     Promise.all([KVStore.get(KEY_TOTAL), KVStore.get(KEY_FIRST)])
